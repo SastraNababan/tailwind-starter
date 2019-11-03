@@ -1,0 +1,35 @@
+{
+  "name": "tailwindcss-starter",
+  "version": "1.0.0",
+  "description": "Tailwind CSS Starter",
+  "main": "index.js",
+  "author": "Sastra Nababan <sastranababan@yahoo.com>",
+  "license": "MIT",
+  "keywords": [
+    "tailwind",
+    "starter",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SastraNababan/tailwind-starter"
+  },
+  "scripts": {
+    "init-tailwind": "tailwind init tailwind.config.js",
+    "css": "tailwind build tailwind.config.css -c tailwind.config.js -o src/css/style.css",
+    "build:css": "postcss tailwind.config.css -o dist/css/style.min.css",
+    "build:html": "html-minifier --input-dir ./src --output-dir ./dist --collapse-whitespace",
+    "build": "npm run build:css && npm run build:html",
+    "dev": "npm run css && live-server src --port=8080",
+    "prod": "live-server dist --port=9090"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "autoprefixer": "^9.7.1",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "live-server": "^1.2.1",
+    "postcss-cli": "^6.1.3",
+    "tailwindcss": "^1.1.3"
+  }
+}
